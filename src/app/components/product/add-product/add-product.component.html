@@ -1,0 +1,16 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+ <label for="name">name</label>
+ <input  id="name" type="string"  formControlName="name" />
+
+ <label for="color">name</label>
+ <input  id="color" type="string"  formControlName="color" />
+ 
+
+ <label for="capacity">name</label>
+ <input  id="capacity" type="string"  formControlName="capacity" />
+
+ <button type="submit">Add</button>
+ <button type="button" (click)="onCancel()">cancel</button>
+
+
+</form>
