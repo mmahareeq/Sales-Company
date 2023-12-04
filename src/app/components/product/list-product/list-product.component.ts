@@ -13,16 +13,9 @@ import { Observable } from 'rxjs';
 })
 export class ListProductComponent implements OnInit{
 
-  isLoading !: boolean;
-  products !: any;
-  isError !: boolean;
-  lengthOfProducts!: number;
-
   loading$ :Observable<boolean> | undefined;
   products$: Observable<any> | undefined;
   
-
-
 
   constructor(private productService: ProductService,
     private router: Router,
@@ -32,20 +25,9 @@ export class ListProductComponent implements OnInit{
   ngOnInit(): void {
     this.store.dispatch(ProductAction.loadProducts());
     this.initSubscriptions();
-    this.isLoading = true;
-    this.lengthOfProducts = 0;
-    this.products = [];
-    this.fetchProduct();
   }
 
-  fetchProduct(){
-   this.productService.getProduct().subscribe(data=>{
 
-    this.products = data;
-    this.lengthOfProducts = this.products.length;
-    this.isLoading = false;
-   })
-  }
   
   goToAddProduct(){
     this.router.navigate(['add'], { relativeTo: this.route })

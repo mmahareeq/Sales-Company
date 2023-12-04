@@ -1,23 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Login } from '../../models/login.interface';
+import {  Observable, Subject ,Subscription } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  private loggedInSubject: Subject<boolean> = new Subject<boolean>();
+  loggedIn$: Observable<boolean> = this.loggedInSubject.asObservable();
 
   constructor(private http:HttpClient) { }
   
   login(data: Login){
       localStorage.setItem('user', JSON.stringify(data));
-      return true
+      this.loggedInSubject.next(true);
   }
 
   logout(){
     localStorage.clear();
+    this.loggedInSubject.next(false);
   }
 
   isLoggedIn() {
-    return localStorage.getItem('user');
+    const data = localStorage.getItem('user');
+    return data ? JSON.parse(data): null;
   }
 }

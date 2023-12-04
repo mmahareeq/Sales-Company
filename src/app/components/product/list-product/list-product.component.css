@@ -1,33 +1,34 @@
-
-
-#product-list{
+#product-list {
     width: 100%;
-   overflow: hidden;
-   margin-top: 1rem;
-  }
-  
-
-#product-list th{
-    padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
+    overflow: hidden;
+    margin-top: 1rem;
 }
 
-#product-list td, #product-list th {
+
+#product-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+#product-list td,
+#product-list th {
     border: 1px solid #676464;
     padding: 8px;
+    font-weight: 400;
 }
 
-#add-new-product{
+#add-new-product {
     margin: 0.7em 0em 0.7em 0em;
     padding: 0.8em;
     font-size: 16px;
     border: none;
-   float: right;
-   cursor: pointer;
+    float: right;
+    cursor: pointer;
 }
-#add-new-product:hover{
+
+#add-new-product:hover {
     opacity: 0.9;
 }

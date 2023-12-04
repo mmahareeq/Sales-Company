@@ -3,7 +3,7 @@
   <button type="button" (click)="goToAddProduct()" id="add-new-product">Add New Product</button>
  
   <p *ngIf="loading$ | async"> Loading ...</p>
-  <table *ngIf="!isLoading" id="product-list">
+  <table *ngIf=" !(loading$ | async)" id="product-list">
    <tr>
     <th>#</th>
     <th>Name</th>
