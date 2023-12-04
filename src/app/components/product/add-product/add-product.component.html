@@ -1,16 +1,22 @@
+<h3>Add New Product</h3>
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
- <label for="name">name</label>
- <input  id="name" type="string"  formControlName="name" />
+    <label for="name">Name</label>
+    <input id="name" type="string" formControlName="name" id="name-input" />
+    <div class="row">
+        <div class="input-1">
+            <label for="color">Color</label>
+            <input id="color" type="string" formControlName="color" />
+        </div>
+        <div class="input-2">
+            <label for="capacity">Capacity</label>
+            <input id="capacity" type="string" formControlName="capacity" />
+        </div>
+    </div>
+    <div class="buttons">
+        <button type="submit">Add</button>
+        <button type="button" (click)="onCancel()">Cancel</button>
+    </div>
 
- <label for="color">name</label>
- <input  id="color" type="string"  formControlName="color" />
- 
-
- <label for="capacity">name</label>
- <input  id="capacity" type="string"  formControlName="capacity" />
-
- <button type="submit">Add</button>
- <button type="button" (click)="onCancel()">cancel</button>
 
 
 </form>

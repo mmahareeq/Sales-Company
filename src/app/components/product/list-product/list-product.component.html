@@ -1,11 +1,9 @@
 <div>
     <h3>List of products</h3>
-
-  <hr>
-  <button type="button" (click)="goToAddProduct()">Add New Product</button>
-  <hr>
+  <button type="button" (click)="goToAddProduct()" id="add-new-product">Add New Product</button>
+ 
   <p *ngIf="isLoading"> Loading ...</p>
-  <table *ngIf="!isLoading">
+  <table *ngIf="!isLoading" id="product-list">
    <tr>
     <th>#</th>
     <th>Name</th>
