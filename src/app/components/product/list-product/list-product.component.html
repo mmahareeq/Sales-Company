@@ -9,6 +9,8 @@
     <th>Name</th>
     <th>Capacity</th>
     <th>Color</th>
+    <th>Price</th>
+    <th>Year</th>
    </tr>
    <ng-container *ngFor="let product of products$ | async">
     <tr>
@@ -16,6 +18,8 @@
       <td>{{product.name}}</td>
       <td>{{product.data?.capacity}}</td>
       <td>{{product.data?.color}}</td>
+      <td>{{product.data?.price}}</td>
+      <td>{{product.data?.year}}</td>
     </tr>
    </ng-container>
   </table>

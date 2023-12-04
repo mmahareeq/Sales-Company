@@ -23,6 +23,13 @@ button{
     justify-content: flex-end;
 }
 
+.cancel-btn, .add-btn{
+    cursor: pointer;
+}
+.cancel-btn:hover , .add-btn:hover{
+ opacity: 0.9;
+}
+
 #name-input{
     width: 100%;
 }

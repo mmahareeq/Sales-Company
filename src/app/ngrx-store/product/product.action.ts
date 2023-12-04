@@ -2,14 +2,16 @@ import { createAction, props } from '@ngrx/store';
 import { Product } from "../../models/product.interface";
 
 export enum ProductActionType {
-    ADD_PRODUCT = '[PRODUCT] Add',
-    GET_PRODUCTS = '[PRODUCT] get',
+    ADD_PRODUCT = '[Product] Add',
+    ADD_PRODUCT_SUCCESS = '[Product] Success',
+    GET_PRODUCTS = '[Product] get',
     LOAD_PRODUCTS= '[Product] load',
     LOAD_PRODUCTS_FAILER= '[Product] failer'
 
   }
 
   export const addProduct = createAction(ProductActionType.ADD_PRODUCT, props<{product: Product}>());
+  export const addProductSuccess = createAction(ProductActionType.ADD_PRODUCT_SUCCESS, props<{product: Product}>());
 
   export const getAllProduct = createAction(ProductActionType.GET_PRODUCTS, props<{products: any}>());
 
