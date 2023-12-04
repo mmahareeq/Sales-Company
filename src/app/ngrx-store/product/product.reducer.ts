@@ -7,7 +7,9 @@ export const initialState: ProductState = {
     loading: false,
     error: null
   };
+  
 
+  // Reducer: for updating the state, used pure function 
   export const ProductReducer = createReducer(
     initialState,
     on(addProduct, (state, {product}) => (

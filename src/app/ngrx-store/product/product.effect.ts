@@ -8,6 +8,8 @@ import { ProductService } from '../../components/product/product.service';
 import { Router } from '@angular/router';
 
 @Injectable()
+
+// Effect => manage all side effects from action dispatching, and call product service to handle the data 
 export class ProductEffect {
    
     

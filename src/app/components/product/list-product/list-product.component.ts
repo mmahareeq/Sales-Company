@@ -16,7 +16,6 @@ export class ListProductComponent implements OnInit{
   loading$ :Observable<boolean> | undefined;
   products$: Observable<any> | undefined;
   
-
   constructor(private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
