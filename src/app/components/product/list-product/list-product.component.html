@@ -2,7 +2,7 @@
     <h3>List of products</h3>
   <button type="button" (click)="goToAddProduct()" id="add-new-product">Add New Product</button>
  
-  <p *ngIf="isLoading"> Loading ...</p>
+  <p *ngIf="loading$ | async"> Loading ...</p>
   <table *ngIf="!isLoading" id="product-list">
    <tr>
     <th>#</th>
@@ -10,7 +10,7 @@
     <th>Capacity</th>
     <th>Color</th>
    </tr>
-   <ng-container *ngFor="let product of products">
+   <ng-container *ngFor="let product of products$ | async">
     <tr>
       <td>{{product.id}}</td>
       <td>{{product.name}}</td>
@@ -19,5 +19,4 @@
     </tr>
    </ng-container>
   </table>
-
 </div>
