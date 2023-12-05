@@ -11,7 +11,7 @@ export enum ProductActionType {
   }
   // actions => hold all actions that need to implement adding and getting product
   export const addProduct = createAction(ProductActionType.ADD_PRODUCT, props<{product: Product}>());
-  export const addProductSuccess = createAction(ProductActionType.ADD_PRODUCT_SUCCESS, props<{product: Product}>());
+  export const addProductSuccess = createAction(ProductActionType.ADD_PRODUCT_SUCCESS, props<{product: any}>());
 
   export const getAllProduct = createAction(ProductActionType.GET_PRODUCTS, props<{products: any}>());
 

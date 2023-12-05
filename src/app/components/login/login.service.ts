@@ -21,7 +21,7 @@ export class LoginService {
     localStorage.clear();
     this.loggedInSubject.next(false);
   }
-
+  
   isLoggedIn() {
     const data = localStorage.getItem('user');
     return data ? JSON.parse(data): null;

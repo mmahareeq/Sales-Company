@@ -69,9 +69,12 @@
 </style>
 
 <main >
- <app-header></app-header>
+  <ng-template [ngIf]="isLogin">
+    <app-header></app-header>
+  </ng-template>
+  
  
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

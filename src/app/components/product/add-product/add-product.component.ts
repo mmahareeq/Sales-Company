@@ -35,7 +35,6 @@ export class AddProductComponent  implements OnInit{
 
     this.store.dispatch(ProductAction.addProduct({
       product: {
-        id: id,
         name: values.name,
         data: {
           color: values.color,

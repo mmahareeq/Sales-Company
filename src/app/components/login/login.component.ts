@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit{
   
   onSubmit(){
     const res = this.loginService.login(this.loginForm.value);
-    this.router.navigate(['/']);
+    this.router.navigate(['/product']);
   
   }
 }

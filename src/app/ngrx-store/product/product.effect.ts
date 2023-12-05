@@ -18,8 +18,9 @@ export class ProductEffect {
     switchMap(() => this.productService.getProduct()
       .pipe(
         map(products =>{
-            //this.productService.ProductsList.push(products)
-            console.log(this.productService.ProductsList)
+            
+            // this.productService.ProductsList = [...this.productService.ProductsList, products]
+            // console.log(this.productService.ProductsList[0])
             return ProductAction.getAllProduct({products})
         } ),
         catchError(error => of(ProductAction.loadProductsFailer({ error })))
@@ -32,7 +33,11 @@ export class ProductEffect {
     ofType(ProductAction.addProduct),
     switchMap((product) => this.productService.addProduct(product)
       .pipe(
-        map(product => ProductAction.addProductSuccess({product})),
+        map(product => {
+          // console.log(product)
+          // this.productService.ProductsList = [...this.productService.ProductsList, product];
+          return ProductAction.addProductSuccess({product})
+        }),
         tap(() => this.router.navigate(['/product']))
 
       )
