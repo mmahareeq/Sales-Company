@@ -1,0 +1,26 @@
+<div>
+    <h3>List of products</h3>
+  <button type="button" (click)="goToAddProduct()" id="add-new-product">Add New Product</button>
+ 
+  <p *ngIf="loading$ | async"> Loading ...</p>
+  <table *ngIf=" !(loading$ | async)" id="product-list">
+   <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Capacity</th>
+    <th>Color</th>
+    <th>Price</th>
+    <th>Year</th>
+   </tr>
+   <ng-container *ngFor="let product of products$ | async">
+    <tr>
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.data?.capacity}}</td>
+      <td>{{product.data?.color}}</td>
+      <td>{{product.data?.price}}</td>
+      <td>{{product.data?.year}}</td>
+    </tr>
+   </ng-container>
+  </table>
+</div>

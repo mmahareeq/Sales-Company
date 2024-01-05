@@ -1,0 +1,39 @@
+<h3>Add New Product</h3>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="input-1">
+            <label for="name">Name</label>
+            <input id="name" type="string" formControlName="name" id="name-input" />
+        </div>
+        <div class="input-2">
+            <label for="color">Color</label>
+            <input id="color" type="string" formControlName="color" />
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="input-1">
+            <label for="capacity">Capacity</label>
+            <input id="capacity" type="string" formControlName="capacity" />
+        </div>
+        <div class="input-2">
+            <label for="price">Price ($)</label>
+            <input id="price" type="number" step="any" formControlName="price" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-1">
+            <label for="year">Year</label>
+            <input id="year" type="number" min="1990" max="2030"  placeholder="YYYY"  formControlName="year" />
+        </div>
+        <div class="input-2">
+        </div>
+    </div>
+    <div class="buttons">
+        <button type="submit" class="add-btn">Add</button>
+        <button type="button" (click)="onCancel()" class="cancel-btn">Cancel</button>
+    </div>
+
+
+
+</form>

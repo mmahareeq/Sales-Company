@@ -1,0 +1,16 @@
+<nav>
+    <div class="left-side">
+    <h3 class="company-name"> Sales Company</h3>
+    <ul>
+        <li ><a routerLink="/">Home</a></li>
+        <li ><a routerLink="/product">Products</a></li>
+    </ul>
+    </div>
+    <ng-template [ngIf]="!isLogin">
+         <a routerLink="login">Login</a>
+    </ng-template>
+   
+   <ng-template [ngIf]="isLogin">
+     <a (click)=" onLogout() ">Logout</a>
+   </ng-template>
+</nav>
